@@ -9,7 +9,7 @@ function ClassSettings:New(_fileName)
 	obj.directoryPath = getCheatEngineDir()..'autorun'
 	obj.filePath = obj.directoryPath..'\\'..obj.fileName
 	
-	-- Есть ли такой ключ
+	-- Р•СЃС‚СЊ Р»Рё С‚Р°РєРѕР№ РєР»СЋС‡
 	function obj:HasKey(keyString)
 		local stringCount = obj.stringList.Count
 
@@ -21,7 +21,7 @@ function ClassSettings:New(_fileName)
 		end
 	end
 	
-	-- Получить значение ключа
+	-- РџРѕР»СѓС‡РёС‚СЊ Р·РЅР°С‡РµРЅРёРµ РєР»СЋС‡Р°
 	function obj:Get(keyString, defaultValue)
 		if(obj:HasKey(keyString)) then
 			local stringCount = obj.stringList.Count
@@ -35,9 +35,9 @@ function ClassSettings:New(_fileName)
 		return defaultValue
 	end
 	
-	-- Записать ключ
+	-- Р—Р°РїРёСЃР°С‚СЊ РєР»СЋС‡
 	function obj:Set(keyString, stringOrDigitalValue)
-		-- Искать номер строки
+		-- РСЃРєР°С‚СЊ РЅРѕРјРµСЂ СЃС‚СЂРѕРєРё
 		local stringCount = obj.stringList.Count
 		for i=0,stringCount-1 do
 			local items = obj:Split(obj.stringList[i])
@@ -65,7 +65,7 @@ function ClassSettings:New(_fileName)
 			form.Top = obj:GetDigital(key..'.Top', form.Top)
 	end
 	
-	-- Возвращает числовой вариант
+	-- Р’РѕР·РІСЂР°С‰Р°РµС‚ С‡РёСЃР»РѕРІРѕР№ РІР°СЂРёР°РЅС‚
 	function obj:GetDigital(keyString, defaultValue)
 		if(obj:HasKey(keyString)) then
 			return tonumber(obj:Get(keyString))
@@ -73,7 +73,7 @@ function ClassSettings:New(_fileName)
 		return defaultValue
 	end
 
-	-- Сохранить все ключи
+	-- РЎРѕС…СЂР°РЅРёС‚СЊ РІСЃРµ РєР»СЋС‡Рё
 	function obj:Save()
 		obj.stringList.saveToFile(obj.filePath)
 	end
@@ -110,7 +110,7 @@ function ClassSettings:New(_fileName)
 	end
 
 	
-	-- Загрузка ключей в память
+	-- Р—Р°РіСЂСѓР·РєР° РєР»СЋС‡РµР№ РІ РїР°РјСЏС‚СЊ
 	if(obj:FileExist(obj.directoryPath, obj.filePath)) then
 		obj.stringList.loadFromFile(obj.filePath)
 	end	
