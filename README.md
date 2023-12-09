@@ -18,13 +18,20 @@
 [![Find offsets](https://img.youtube.com/vi/zC4VgWRMRhs/0.jpg)](https://www.youtube.com/watch?v=zC4VgWRMRhs "Find offsets")
 
 [En]
-Plugin for searching for triggered offsets in the structure during the game.
 
-Search for triggered offsets in a structure of the "write and read" or "write only" type
-Filtering of triggered offsets "changed/not changed"
-The ability to generate a structure in CE based on the results of displacements
-At the bottom of the table is a view of the sequence of offsets triggered
-Principle of operation:
+## This Plugin for searching for triggered offsets in the structure during the game.
+
+* Search for triggered offsets in the structure by type "write and read", "write only".
+* Filtering of triggered "changed/unchanged" offsets.
+* Ability to generate a structure in CE based on the results of displacements.
+* At the bottom of the table is a view of the sequence of displacements.
+
+
+## Principle of operation:
+
+* Set the address of the start of the structure with a number or label and indicate the size of the intended structure. It may not be possible to determine the exact size, so the approximate size is 4096. It can be set and this may capture neighboring structures or data.
+* After the start, a breakpoint is set to the memory area. This type of breakpoint is quite slow and the game will start drawing frames slowly. However, this will allow you to monitor access to the entire structure. Therefore, you need to take readings at certain short moments of the game, for example, while receiving damage, gaining health, jumping, colliding, etc.
+* You can watch the video for more details.
 
 Set the address of the start of the structure with a number or label and indicate the size of the intended structure. It may not be possible to determine the exact size, so the approximate size is 4096. It can be set and this may capture neighboring structures or data.
 After the start, a breakpoint is set to the memory area. This type of breakpoint is quite slow and the game will start drawing frames slowly. However, this will allow you to monitor access to the entire structure. Therefore, you need to take readings at certain short moments of the game, for example, while receiving damage, gaining health, jumping, colliding, etc.
